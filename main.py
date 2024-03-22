@@ -1,4 +1,4 @@
-def to_hms(seconds: int) -> list:
+def to_hms(seconds: int) -> list|None:
     """
     Converts seconds to hours, minutes, and seconds, and returns it as a list.
 
@@ -21,5 +21,12 @@ def to_hms(seconds: int) -> list:
     [1, 59, 59]
     """
     # Type your code below
-    pass
+    if not type(seconds)==type(5):
+      print("Unsupported input type.")
+    else:
+      hours = seconds//3600
+      minutes = (seconds%3600)//60
+      seconds = seconds%60
+      return [hours,minutes,seconds]
 
+#print(to_hms(""))
